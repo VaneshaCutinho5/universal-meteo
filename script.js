@@ -12,6 +12,7 @@ weatherForm.addEventListener('submit', function(e){
     e.preventDefault(); //prevent form from refreshing the page 
 
     const userCityName = document.getElementById('cityname').value.trim();
+    //add input validation
     
         if(userCityName === ''){
             displaySection.innerHTML = `
