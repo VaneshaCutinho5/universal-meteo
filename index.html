@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Forecasta : Weather App</title>
+</head>
+<body>
+    <!-- Page Title -->
+    <h1>🌤️ Weather Info Finder</h1>
+
+    <!-- Form for city and weather details -->
+    <form id="weather-form" role="search" aria-labelledby="form-label">
+    <label for="cityname" id="form-label">Enter city name:</label> 
+    <input
+    type="text" 
+    id="cityname" 
+    placeholder="Enter your city here"
+    aria-required="true"
+    required
+    />
+    <button type="submit" id="fetch-info">🔍Search</button>
+    </form>
+
+    <!-- Display Weather Info -->
+    <section id="display-info" class="info-panel" aria-labelledby="search-heading">
+    <h2 id="search-heading">Search Info</h2>
+
+    <!-- Recent Searches Section-->
+    </section>
+    <section id="recent-searches" class="search-result-panel">
+
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
