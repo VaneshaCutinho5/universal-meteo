@@ -56,16 +56,16 @@ function formatTime(timestamp){
 
 function getWeatherVideo(condition){
     const c = condition.toLowerCase();
-    if(c.includes("clear")) return "assets/videos/clear_sky.mp4";
-    if(c.includes("few")) return "assets/videos/few_clouds.mp4";
-    if(c.includes("scattered")) return "assets/videos/scattered_clouds.mp4";
-    if(c.includes("broken")) return "assets/videos/broken_clouds.mp4";
-    if(c.includes("overcast")) return "assets/videos/broken_clouds.mp4";
-    if(c.includes("light")) return "assets/videos/shower_rain.mp4";
-    if(c.includes("rain")) return "assets/videos/light_rain.mp4";
-    if(c.includes("thunder")) return "assets/videos/thunderstorm.mp4";
-    if(c.includes("snow")) return "assets/videos/snow.mp4";
-    if(c.includes("mist")) return "assets/videos/mist.mp4";
+    if(c.includes("clear")) return "assets/clear_sky.mp4";
+    if(c.includes("few")) return "assets/few_clouds.mp4";
+    if(c.includes("scattered")) return "assets/scattered_clouds.mp4";
+    if(c.includes("broken")) return "assets/broken_clouds.mp4";
+    if(c.includes("overcast")) return "assets/broken_clouds.mp4";
+    if(c.includes("light")) return "assets/shower_rain.mp4";
+    if(c.includes("rain")) return "assets/light_rain.mp4";
+    if(c.includes("thunder")) return "assets/thunderstorm.mp4";
+    if(c.includes("snow")) return "assets/snow.mp4";
+    if(c.includes("mist")) return "assets/mist.mp4";
 }
 setTimeout(() => {
 fetch(url)
