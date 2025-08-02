@@ -11,15 +11,22 @@ const apiKey = '4e7bc7801d2ca437ab43d53e1c5418d7'       // OpenWeatherMap API KE
 weatherForm.addEventListener('submit', function(e){
     e.preventDefault(); //prevent form from refreshing the page 
 
-    const userCityName = document.getElementById('cityname').value.trim();
-    //add input validation
-    
-        if(userCityName === ''){
-            displaySection.innerHTML = `
-            <h2 id="search-heading">Search Info</h2>
-            <p>Please enter a city name.</p>`;
+const userCityName = document.getElementById('cityname').value.trim();
+const validCityRegex = /^[a-zA-z\s]+$/.test(userCityName);    
+
+    if(userCityName === ''){
+        displaySection.innerHTML = `
+        <h2 id="search-heading">Search Info</h2>
+        <p>❗ Please enter a city name.</p>`;
         return;
     }
+
+
+    if(!validCityRegex) {
+        alert("Please enter a valid city name (letters only).");
+        return;
+    }
+
 
 // Get the city name from user input
 
@@ -32,6 +39,11 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${userCityName}&a
 //     console.log(userCityName);
 //     console.log(url)
 
+
+displaySection.innerHTML = `<p>⏳ Fetching weather data for ${userCityName}....</p>`;
+
+
+setTimeout(() => {
 fetch(url)
     .then((response) => {
         if(!response.ok){
@@ -54,7 +66,8 @@ fetch(url)
             <p>Error: ${error.message}</p>
             `;
     
-    });
+        });
+    }, 1000);
 });
 
 //   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
